@@ -13,13 +13,18 @@ public class Day03b {
         }
 
         int treeCount = 0, right = 3, down = 1;
+        long product = 1;
+        product *= treeCounter(map,1,1);
+        product *= treeCounter(map,3,1);
+        product *= treeCounter(map,5,1);
+        product *= treeCounter(map,7,1);
+        product *= treeCounter(map,1,2);
 
-
-        System.out.println("Answer: " + treeCount);
+        System.out.println("Answer: " + product);
 
     }
 
-    private int treeCounter(ArrayList<String[]> map, int right, int down){
+    private static int treeCounter(ArrayList<String[]> map, int right, int down){
         int treeCount = 0, row = 0, col = 0;
 
         while(row < map.size()-1){
