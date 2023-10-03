@@ -16,7 +16,7 @@ public class Day05a {
         for (String seat : values) {
 // process boarding codes into seat IDs
             String[] vals = seat.split("");
-            int high = 127, low = 0, row = -1, col = -1;
+            int high = 127, low = 0, row, col;
             for (int i = 0; i < 7; i++) {
                 if (vals[i].equals("F")){
                     high = (high + low+1) / 2 - 1;
