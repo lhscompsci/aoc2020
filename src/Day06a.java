@@ -37,7 +37,7 @@ public class Day06a {
             }
 
 
-            sum += questions.size();
+            sum += count;
         }
 
         out.println("Answer: " + sum);
