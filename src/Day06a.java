@@ -1,6 +1,6 @@
 import java.io.File;
-import java.lang.reflect.Array;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 import static java.lang.System.out;
 
@@ -20,6 +20,14 @@ public class Day06a {
         values.add(group);
 
 
+        int sum = getSum(values);
+
+        out.println("Answer: " + sum);
+
+
+    }
+
+    private static int getSum(ArrayList<ArrayList<String>> values) {
         int sum = 0;
         for (ArrayList<String> grp : values) {
             String first = grp.get(0);
@@ -29,9 +37,10 @@ public class Day06a {
                 String[] fst = first.split("");
                 int curr = 0;
                 for(String s: grp){
-                    if(!s.contains(fst[curr])){
+                    if (!s.contains(fst[curr])) {
                         found = false;
 
+                        break;
                     }
                 }
             }
@@ -39,10 +48,7 @@ public class Day06a {
 
             sum += count;
         }
-
-        out.println("Answer: " + sum);
-
-
+        return sum;
     }
 }
 
